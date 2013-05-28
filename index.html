@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="eSolid RT Kernel : real time, kernel, embedded" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>eSolid RT Kernel</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/nradulovic/esolid-kernel">View on GitHub</a>
+
+          <h1 id="project_title">eSolid RT Kernel</h1>
+          <h2 id="project_tagline">real time, kernel, embedded</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/nradulovic/esolid-kernel/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/nradulovic/esolid-kernel/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>eSolid Real-Time Kernel</h1>
+
+<p>This is a bare-kernel, two weeks of work project. It is intended for a bigger 
+project which already includes some synchronization mechanisms. The initial 
+idea was that this kernel would only provide minimal functionality for context 
+switching, but the kernel implementation went so nicely that I think that it 
+would be great to share it. </p>
+
+<p>eSolid is a collection of resources for embedded system design and this
+Real-Time Kernel is only a piece of that collection. Because of that fact
+remember: <strong>there are no synchronization or IPC mechanisms in this kernel</strong>,
+and it can be viewed as a preemptive Round-Robin scheduler, only.</p>
+
+<h2>TODO list</h2>
+
+<ul>
+<li>Integrate a profiling system (memory/stack usage, cpu usage...)</li>
+<li>Thread terminate function</li>
+<li>Time delay/management</li>
+</ul><h1>Using eSolid Real-Time Kernel</h1>
+
+<h2>Configuration and ports</h2>
+
+<p>Configuration is done in two files: kernel_cfg.h (port independent settings) 
+and in cpu_cfg.h (port depended settings).
+Currently, kernel is ported only to ARMv7-M architecture range of 
+microcontrollers. It was tested on STM32F100 series of microcontrollers, but it
+should work, with minimal modifications, on any ARMv7-M CPU. Some other ports 
+like AVR-GCC are planned, too.</p>
+
+<h2>Building</h2>
+
+<p>The kernel was built using arm-none-eabi GCC v4.7.3 compiler toolchain (from 
+<a href="https://launchpad.net/gcc-arm-embedded/+download">https://launchpad.net/gcc-arm-embedded/+download</a>) and binary was downloaded
+to the MCU using <em>texane</em> gdb-server. There are no makefiles, it is assumed
+that IDE will generate them for you.</p>
+
+<p>There are two source files which need to be compiled: </p>
+
+<ul>
+<li>kernel.c in '/src' directory and </li>
+<li>cpu.c in '/port/arm-none-eabi-gcc/v7-m' directory.</li>
+</ul><p>The following include paths are needed:</p>
+
+<ul>
+<li>/inc</li>
+<li>/port/arm-none-eabi-gcc/common</li>
+<li>/port/arm-none-eabi-gcc/v7-m</li>
+</ul><h3>Documentation</h3>
+
+<p>Doxygen configuration and source files are available in /doc directory. Go to
+that directory and run doxygen:</p>
+
+<pre><code># doxygen doxyfile-kernel
+# doxygen doxyfile-kernel-port
+</code></pre>
+
+<p>This will generate HTML, LaTex and man documentation in /doc/out/kernel and
+/doc/out/kernel-port directories, respectively.</p>
+
+<h2>Running</h2>
+
+<p>To successfully use and run kernel you will need to study the kernel 
+documentation. The documentation is still being written and some examples will
+be added later.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">eSolid RT Kernel maintained by <a href="https://github.com/nradulovic">nradulovic</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
