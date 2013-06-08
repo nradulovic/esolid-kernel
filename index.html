@@ -31,9 +31,10 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>eSolid Real-Time Kernel</h1>
+        <h1>
+<a name="esolid-real-time-kernel" class="anchor" href="#esolid-real-time-kernel"><span class="octicon octicon-link"></span></a>eSolid Real-Time Kernel</h1>
 
-<p>This is a bare-kernel, two weeks of work project. It is intended for a bigger 
+<p>This is a bare-kernel, the result of two weeks of work. It is intended for a bigger 
 project which already includes some synchronization mechanisms. The initial 
 idea was that this kernel would only provide minimal functionality for context 
 switching, but the kernel implementation went so nicely that I think that it 
@@ -44,24 +45,28 @@ Real-Time Kernel is only a piece of that collection. Because of that fact
 remember: <strong>there are no synchronization or IPC mechanisms in this kernel</strong>,
 and it can be viewed as a preemptive Round-Robin scheduler, only.</p>
 
-<h2>TODO list</h2>
+<h2>
+<a name="todo-list" class="anchor" href="#todo-list"><span class="octicon octicon-link"></span></a>TODO list</h2>
 
 <ul>
 <li>Integrate a profiling system (memory/stack usage, cpu usage...)</li>
-<li>Thread terminate function</li>
 <li>Time delay/management</li>
-</ul><h1>Using eSolid Real-Time Kernel</h1>
+<li>test, test, test...</li>
+</ul><h1>
+<a name="using-esolid-real-time-kernel" class="anchor" href="#using-esolid-real-time-kernel"><span class="octicon octicon-link"></span></a>Using eSolid Real-Time Kernel</h1>
 
-<h2>Configuration and ports</h2>
+<h2>
+<a name="configuration-and-ports" class="anchor" href="#configuration-and-ports"><span class="octicon octicon-link"></span></a>Configuration and ports</h2>
 
-<p>Configuration is done in two files: kernel_cfg.h (port independent settings) 
-and in cpu_cfg.h (port depended settings).
+<p>Configuration is done in two files: <code>kernel_cfg.h</code> (port independent settings) 
+and in <code>cpu_cfg.h</code> (port depended settings).
 Currently, kernel is ported only to ARMv7-M architecture range of 
 microcontrollers. It was tested on STM32F100 series of microcontrollers, but it
 should work, with minimal modifications, on any ARMv7-M CPU. Some other ports 
 like AVR-GCC are planned, too.</p>
 
-<h2>Building</h2>
+<h2>
+<a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h2>
 
 <p>The kernel was built using arm-none-eabi GCC v4.7.3 compiler toolchain (from 
 <a href="https://launchpad.net/gcc-arm-embedded/+download">https://launchpad.net/gcc-arm-embedded/+download</a>) and binary was downloaded
@@ -71,27 +76,30 @@ that IDE will generate them for you.</p>
 <p>There are two source files which need to be compiled: </p>
 
 <ul>
-<li>kernel.c in '/src' directory and </li>
-<li>cpu.c in '/port/arm-none-eabi-gcc/v7-m' directory.</li>
+<li>kernel.c in <code>/src</code> directory and </li>
+<li>cpu.c in <code>/port/arm-none-eabi-gcc/v7-m</code> directory.</li>
 </ul><p>The following include paths are needed:</p>
 
 <ul>
-<li>/inc</li>
-<li>/port/arm-none-eabi-gcc/common</li>
-<li>/port/arm-none-eabi-gcc/v7-m</li>
-</ul><h3>Documentation</h3>
+<li><code>/inc</code></li>
+<li><code>/port/arm-none-eabi-gcc/common</code></li>
+<li><code>/port/arm-none-eabi-gcc/v7-m</code></li>
+</ul><h3>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h3>
 
-<p>Doxygen configuration and source files are available in /doc directory. Go to
-that directory and run doxygen:</p>
+<p>Some documentation is available under Wiki <a href="https://github.com/nradulovic/esolid-kernel/wiki">https://github.com/nradulovic/esolid-kernel/wiki</a>. 
+Doxygen configuration and full documentation source files are available in <code>/doc</code> directory. 
+Go to the directory and run doxygen:</p>
 
 <pre><code># doxygen doxyfile-kernel
 # doxygen doxyfile-kernel-port
 </code></pre>
 
-<p>This will generate HTML, LaTex and man documentation in /doc/out/kernel and
-/doc/out/kernel-port directories, respectively.</p>
+<p>This will generate HTML, LaTex and man documentation in <code>/doc/out/kernel</code> and
+<code>/doc/out/kernel-port</code> directories, respectively.</p>
 
-<h2>Running</h2>
+<h2>
+<a name="running" class="anchor" href="#running"><span class="octicon octicon-link"></span></a>Running</h2>
 
 <p>To successfully use and run kernel you will need to study the kernel 
 documentation. The documentation is still being written and some examples will
