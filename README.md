@@ -1,3 +1,8 @@
+Deprecated repository
+=====================
+This repository is scheduled to be deleted. Once all source files are moved
+to new projects the repository will be deleted.
+
 # Introduction 
 
 This is a bare-kernel for embedded systems. It is intended for a bigger project 
